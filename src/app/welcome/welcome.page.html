@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    
+    <ion-title>ADMIN</ion-title>
+
+    <!-- Side menu button -->
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button expand="block" (click)="getLogout()" shape="round">Log out</ion-button>
+      
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="home">
+  
+  <div>
+    <ion-grid class="grid-full">
+      <ion-row>
+       <ion-col class="cell-1" (click)="callAbsenteesData();">
+         <b>ABSENTEES LIST</b>
+        </ion-col>
+        <ion-col class="cell-2" (click)="callHolidayData();">
+          <b>HOLIDAY LIST</b>
+         </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="cell-3" >
+          <b>FEES</b>
+         </ion-col>
+         <ion-col class="cell-4">
+           <b>TIMETABLE</b>
+          </ion-col>
+       </ion-row>
+       <ion-row>
+        <ion-col class="cell-5" >
+          <b>STUDENT TOP PERFORMER</b>
+         </ion-col>
+         <ion-col class="cell-6">
+           <b>REVENUE</b>
+          </ion-col>
+       </ion-row>
+       <ion-row>
+        <ion-col class="cell-7" >
+          <b>REVENUE</b>
+         </ion-col>
+         <ion-col class="cell-8">
+           <b>BUS AS A BUSSINESS UNIT</b>
+          </ion-col>
+       </ion-row>
+       <ion-row>
+        <ion-col class="cell-9">
+          <b>FACULTY TOP PERFORMER</b>
+         </ion-col>
+         <ion-col class="cell-10">
+           <b>MARKLIST</b>
+          </ion-col>
+       </ion-row>
+       <ion-row>
+        <ion-col class="cell-11">
+          <b>ANNUAL EXPENDITURE</b>
+         </ion-col>
+         <ion-col class="cell-12">
+           <b>DAY COLLECTION</b>
+          </ion-col>
+       </ion-row>
+       <ion-row>
+        <ion-col class="cell-13">
+          <b>DUES</b>
+         </ion-col>
+         <ion-col class="cell-14">
+           <b>FINANCIAL</b>
+          </ion-col>
+       </ion-row>
+    </ion-grid>
+  
+  </div>
+  
+  </ion-content>

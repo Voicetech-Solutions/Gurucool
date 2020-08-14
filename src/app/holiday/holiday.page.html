@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar  color="primary">
+    <ion-title>Holiday Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="home">
+  
+  <div style="border:1px;">
+    <ion-list>
+
+      <ion-grid style="border: 1px;">
+      <ion-row  class="home_row_head">
+      <ion-col>
+        <div>
+        <small>Holiday Date</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>Holiday Name</small>
+        </div>
+      </ion-col>
+      
+      </ion-row>
+      </ion-grid>
+
+      <ion-grid *ngFor="let post of array1">
+        <ion-row  class="home_row" >
+          <ion-col>
+            <div>
+            <small> {{post.EventDate}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div style="width: 90px;">
+            <small> {{post.EventTitle}}</small>
+            </div>
+          </ion-col>
+          </ion-row>
+      </ion-grid>
+      
+    </ion-list>
+    
+  </div>
+  </ion-content>

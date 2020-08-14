@@ -1,0 +1,8 @@
+{
+  "name": "gurucool",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

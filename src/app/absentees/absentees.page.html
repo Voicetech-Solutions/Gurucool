@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>ABSENTEES DATA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="home">
+  <ion-item>
+    <ion-label>DATE</ion-label>
+    <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="SelectDate" placeholder="Select Date"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Select</ion-label>
+    <ion-select placeholder="Select One" [(ngModel)]="AttType" (ionChange)="optionsFn();">
+      <ion-select-option value="Full">FULL DAY</ion-select-option>
+      <ion-select-option value="1">SESSION 1</ion-select-option>
+      <ion-select-option value="2">SESSION 2</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <div style="border:1px;">
+    <ion-list>
+
+      <ion-grid style="border: 1px;">
+      <ion-row  class="home_row_head">
+      <ion-col>
+        <div>
+        <small>ID</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div style="width: 90px;">
+        <small>NAME</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>CLASS</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>SECTION</small>
+        </div>
+      </ion-col>
+      
+      <ion-col>
+        <div>
+        <small>NUMBER</small>
+        </div>
+      </ion-col>
+      </ion-row>
+      </ion-grid>
+
+      <ion-grid *ngFor="let post of PostData">
+        <ion-row  class="home_row" >
+          <ion-col>
+            <div>
+            <small> {{post.ApplicationNo}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div style="width: 90px;">
+            <small> {{post.StudentFirstName}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small> {{post.CourseId}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <small> {{post.SectionName}}</small>
+          </ion-col>
+          
+          <ion-col>
+            <div>
+            <small> {{post.FathersPhoneNum}}</small>
+            </div>
+          </ion-col>
+          </ion-row>
+      </ion-grid>
+      
+    </ion-list>
+    
+  </div>
+</ion-content>
