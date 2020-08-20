@@ -5,6 +5,10 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
@@ -20,6 +24,15 @@ const routes: Routes = [
     path: 'holiday',
     loadChildren: () => import('./holiday/holiday.module').then( m => m.HolidayPageModule)
   },
+  {
+    path: 'timetable',
+    loadChildren: () => import('./timetable/timetable.module').then( m => m.TimetablePageModule)
+  },
+  {
+    path: 'daycollection',
+    loadChildren: () => import('./daycollection/daycollection.module').then( m => m.DaycollectionPageModule)
+  },
+  
 ];
 
 @NgModule({

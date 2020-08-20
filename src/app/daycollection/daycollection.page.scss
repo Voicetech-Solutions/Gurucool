@@ -1,0 +1,22 @@
+.home_row{
+    text-align: center;
+    background: rgb(137, 226, 164);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    font-size: x-small;
+    }
+    
+    .home_row_head{
+    text-align: center;
+    background: rgb(144, 144, 151);
+    font-size: smaller;
+    }
+.home_row_heading{
+    text-align: center;
+    background-color: skyblue;
+    color: black;
+    font-size: small;
+    font-weight: bold;
+    padding: 6px 6px 6px 6px;
+}

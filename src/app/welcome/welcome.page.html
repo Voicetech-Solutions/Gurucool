@@ -1,82 +1,146 @@
-<ion-header>
-  <ion-toolbar color="primary">
+<ion-app>
+  <ion-menu side="start" content-id="main-content">
+    <ion-header>
+      <ion-toolbar translucent>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="mail" slot="start"></ion-icon>
+          <ion-label>PROFILE</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="power" (click)="getLogout()"  slot="start"></ion-icon>
+          <ion-label>SIGN OUT</ion-label>
+        </ion-item>
+        
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar  color="primary">
+        <ion-buttons slot="start">
+          <ion-menu-button autoHide="false"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>ADMIN</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
     
-    <ion-title>ADMIN</ion-title>
-
-    <!-- Side menu button -->
-    <ion-buttons slot="start">
-      <ion-menu-button autoHide="false"></ion-menu-button>
-    </ion-buttons>
-    <ion-buttons slot="secondary">
-      <ion-button expand="block" (click)="getLogout()" shape="round">Log out</ion-button>
+      <div>
+        <ion-grid class="grid-full">
+          <ion-row>
+           <ion-col class="cell-1" (click)="callAbsenteesData();">
+             <b>ABSENTEES LIST</b>
+            </ion-col>
+            <ion-col class="cell-2" (click)="callHolidayData();">
+              <b>HOLIDAY LIST</b>
+             </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="cell-3" (click)="callDaycollectionData()">
+              <b>DAY COLLECTION</b>
+             </ion-col>
+             <ion-col class="cell-4" (click)="callTimeTableData();">
+               <b>TIMETABLE</b>
+              </ion-col>
+           </ion-row>
+           <ion-row>
+            <ion-col class="cell-5" >
+              <b>STUDENT TOP PERFORMER</b>
+             </ion-col>
+             <ion-col class="cell-6">
+               <b>REVENUE</b>
+              </ion-col>
+           </ion-row>
+           <ion-row>
+            <ion-col class="cell-7" >
+              <b>REVENUE</b>
+             </ion-col>
+             <ion-col class="cell-8">
+               <b>BUS AS A BUSSINESS UNIT</b>
+              </ion-col>
+           </ion-row>
+           <ion-row>
+            <ion-col class="cell-9">
+              <b>FACULTY TOP PERFORMER</b>
+             </ion-col>
+             <ion-col class="cell-10">
+               <b>MARKLIST</b>
+              </ion-col>
+           </ion-row>
+           <ion-row>
+            <ion-col class="cell-11">
+              <b>ANNUAL EXPENDITURE</b>
+             </ion-col>
+             <ion-col class="cell-12">
+               <b>DAY COLLECTION</b>
+              </ion-col>
+           </ion-row>
+           <ion-row>
+            <ion-col class="cell-13">
+              <b>DUES</b>
+             </ion-col>
+             <ion-col class="cell-14">
+               <b>FINANCIAL</b>
+              </ion-col>
+           </ion-row>
+           <ion-row>
+            <ion-col class="cell-15">
+              <b>FINE</b>
+             </ion-col>
+             <ion-col class="cell-16">
+               <b>FLEET</b>
+              </ion-col>
+           </ion-row>
+           <ion-row>
+            <ion-col class="cell-15">
+              <b>UPCOMING EVENTS</b>
+             </ion-col>
+             <ion-col class="cell-16">
+               <b>ABSENT FACULTY</b>
+              </ion-col>
+           </ion-row>
+           <ion-row>
+            <ion-col class="cell-15">
+              <b>NEW STUDENTS</b>
+             </ion-col>
+             <ion-col class="cell-16">
+               <b>FLEET TRIP DETAILS</b>
+              </ion-col>
+           </ion-row>
+           <ion-row>
+            <ion-col class="cell-15">
+              <b>SUBJECT HOURS DETAILS</b>
+             </ion-col>
+             <ion-col class="cell-16">
+               <b>MONTHLY DETAILS</b>
+              </ion-col>
+           </ion-row>
+           <ion-row>
+            <ion-col class="cell-15">
+              <b>TIMETABLE HOURS</b>
+             </ion-col>
+             <ion-col class="cell-16">
+               <b>NEW STUDENT FEE</b>
+              </ion-col>
+           </ion-row>
+           <ion-row>
+            <ion-col class="cell-15">
+              <b>SMS</b>
+             </ion-col>
+             <ion-col class="cell-16">
+               <b>NEW STUDENT FEE</b>
+              </ion-col>
+           </ion-row>
+        </ion-grid>
       
-    </ion-buttons>
-
-  </ion-toolbar>
-</ion-header>
-
-<ion-content padding class="home">
-  
-  <div>
-    <ion-grid class="grid-full">
-      <ion-row>
-       <ion-col class="cell-1" (click)="callAbsenteesData();">
-         <b>ABSENTEES LIST</b>
-        </ion-col>
-        <ion-col class="cell-2" (click)="callHolidayData();">
-          <b>HOLIDAY LIST</b>
-         </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="cell-3" >
-          <b>FEES</b>
-         </ion-col>
-         <ion-col class="cell-4">
-           <b>TIMETABLE</b>
-          </ion-col>
-       </ion-row>
-       <ion-row>
-        <ion-col class="cell-5" >
-          <b>STUDENT TOP PERFORMER</b>
-         </ion-col>
-         <ion-col class="cell-6">
-           <b>REVENUE</b>
-          </ion-col>
-       </ion-row>
-       <ion-row>
-        <ion-col class="cell-7" >
-          <b>REVENUE</b>
-         </ion-col>
-         <ion-col class="cell-8">
-           <b>BUS AS A BUSSINESS UNIT</b>
-          </ion-col>
-       </ion-row>
-       <ion-row>
-        <ion-col class="cell-9">
-          <b>FACULTY TOP PERFORMER</b>
-         </ion-col>
-         <ion-col class="cell-10">
-           <b>MARKLIST</b>
-          </ion-col>
-       </ion-row>
-       <ion-row>
-        <ion-col class="cell-11">
-          <b>ANNUAL EXPENDITURE</b>
-         </ion-col>
-         <ion-col class="cell-12">
-           <b>DAY COLLECTION</b>
-          </ion-col>
-       </ion-row>
-       <ion-row>
-        <ion-col class="cell-13">
-          <b>DUES</b>
-         </ion-col>
-         <ion-col class="cell-14">
-           <b>FINANCIAL</b>
-          </ion-col>
-       </ion-row>
-    </ion-grid>
-  
+      </div>
+      
+      </ion-content>
   </div>
-  
-  </ion-content>
+</ion-app>

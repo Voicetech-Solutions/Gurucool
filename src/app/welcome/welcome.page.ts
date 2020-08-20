@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController } from '@ionic/angular';
+//import { NavController } from '@ionic/angular';
+import { NgxNavigationWithDataComponent } from 'ngx-navigation-with-data';
 
 @Component({
   selector: 'app-welcome',
@@ -7,26 +8,41 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./welcome.page.scss'],
 })
 export class WelcomePage  {
- 
+  Data : any;
 
-  constructor(public navCtrl: NavController) {
-    
+  constructor(public navCtrl: NgxNavigationWithDataComponent) {
+   // const Database = this.navCtrl.get('Databasename');
    }
+
+  
    getLogout()
    {
-    //this.navCtrl.navigateRoot('/home'); 
+    
     var r  = window.confirm("Are you sure, you want to logout?");
     if(r == true)
     {
-      this.navCtrl.navigateRoot('/home');   
+      this.navCtrl.navigate('/home');   
     }
    }
+   
   callAbsenteesData(){
-    this.navCtrl.navigateRoot('/absentees'); 
+    this.Data = this.navCtrl.get('Databasename');
+    this.navCtrl.navigate('absentees', {Databasename:this.Data}); 
   }
   callHolidayData(){
-    this.navCtrl.navigateRoot('/holiday'); 
+    this.Data = this.navCtrl.get('Databasename');
+    this.navCtrl.navigate('holiday', {Databasename:this.Data}); 
   }
+  callDaycollectionData()
+  {
+    this.Data = this.navCtrl.get('Databasename');
+    this.navCtrl.navigate('daycollection', {Databasename:this.Data});  
+  }
+  callTimeTableData(){
+    this.Data = this.navCtrl.get('Databasename');
+    this.navCtrl.navigate('timetable', {Databasename:this.Data}); 
+  }
+
 
 
 }

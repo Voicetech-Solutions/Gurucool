@@ -1,0 +1,391 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>DAY COLLECTION</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="home">
+  <ion-item>
+    <ion-label>DATE</ion-label>
+    <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="SelectDate" placeholder="Select Date" (ionChange)="datefn();"></ion-datetime>
+  </ion-item>
+
+  <div style="border:1px;">
+    <ion-list>
+      <ion-grid style="border: 1px;">
+      <ion-row  class="home_row_head">
+      <ion-col>
+        <div>
+        <small>CATEGORY</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div style="width: 90px;">
+        <small>AMOUNT</small>
+        </div>
+      </ion-col>
+      </ion-row>
+      </ion-grid>
+
+      <ion-grid *ngFor="let post of PostData">
+        <ion-row  class="home_row" >
+          <ion-col>
+            <div>
+            <small><a (click)="getAcademicInfo()">ACADEMIC</a></small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div style="width: 90px;">
+            <small><a (click)="getToInfo()" >{{post.DayAcaAmount}}</a></small>
+            </div>
+          </ion-col>
+          </ion-row>
+      </ion-grid>
+
+      <ion-grid *ngFor="let post of PostData1">
+        <ion-row  class="home_row" >
+          <ion-col>
+            <div>
+            <small>FLEET</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div style="width: 90px;">
+            <small><a (click)="getToInfo1()" >{{post.DayFleetAmount}}</a></small>
+            </div>
+          </ion-col>
+          </ion-row>
+      </ion-grid>
+    </ion-list>
+  </div>
+
+  <div style="border:1px;">
+    <ion-list>
+      <ion-grid>
+      <ion-row  class="home_row_heading">
+          DAY FEE COLLECTION DETAILS
+      </ion-row>
+      <ion-row  class="home_row_head">
+      <ion-col>
+        <div style="width: 90px;">
+        <small>APPLICATION NO</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>NAME</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>ACCESSORIES</small>
+        </div>
+      </ion-col>
+      </ion-row>
+      </ion-grid>
+    </ion-list>
+  </div>  
+
+  <div style="border:1px;">
+    <ion-list>
+      <ion-grid *ngFor="let post of PostData2" style="border: 1px;">
+        <ion-row  class="home_row_head">
+          <ion-col>
+            <div>
+            <small>CASHIER NAME</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small>CASH</small>
+            </div>
+          </ion-col>
+          </ion-row>
+          <ion-row  class="home_row" >
+            <ion-col>
+              <div>
+              <small *ngFor="let post of PostData2"><a (click)="getAmountDetail(PostData2.FirstName)">{{post.FirstName}}</a></small>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div>
+              <small>{{post.DayAcaAmountUser}}</small>
+              </div>
+            </ion-col>
+            </ion-row>
+      </ion-grid>
+    </ion-list>
+  </div>
+
+  <div style="border:1px;">
+    <ion-list>
+      <ion-grid *ngFor="let post of PostData3" style="border: 1px;">
+        <ion-row  class="home_row" class="home_row_head">
+          <ion-col>
+            <div>
+            <small>CASHIER NAME</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small>CASH</small>
+            </div>
+          </ion-col>
+          </ion-row>
+          <ion-row  class="home_row" >
+            <ion-col>
+              <div>
+              <small><a (click)="getFleetAmountDetail()">{{post.FirstName}}</a></small>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div>
+              <small>{{post.DayAcaAmountUser}}</small>
+              </div>
+            </ion-col>
+            </ion-row>
+      </ion-grid>
+    </ion-list>
+  </div>
+
+  <div style="border:1px;">
+    <ion-list>
+      <ion-grid>
+      <ion-row  class="home_row_heading">
+          ACADEMIC DAY'S COLLECTION
+      </ion-row>
+      <ion-row  class="home_row_head">
+      <ion-col>
+        <div style="width: 90px;">
+        <small>RECEIPT NUM</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>APP NUM</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>NAME</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>CLASS</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>SECTION</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>PAID AMOUNT</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>CONCESSION</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>CONCESSION REASON</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>COLLECTION_MODE</small>
+        </div>
+      </ion-col>
+      <ion-col>
+          <div>
+          <small>COLLECTION_TIME</small>
+          </div>
+      </ion-col>
+      </ion-row>
+      </ion-grid>
+
+      <ion-grid *ngFor="let post of PostData4">
+        <ion-row  class="home_row" >
+          <ion-col>
+            <div>
+            <small> {{post.ReceiptNo}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div style="width: 90px;">
+            <small> {{post.ApplicationNo}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small> {{post.StudentFirstName}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <small> {{post.CurrentSemester}}</small>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small> {{post.SectionName}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small> {{post.AmountPaid}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small> {{post.ConcessionAmount}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small>{{post.ConcessionReason}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small> {{post.PaymentMode}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small> {{post.SectionName}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small>{{post.LastModified}}</small>
+            </div>
+          </ion-col>
+          </ion-row>
+      </ion-grid>
+    </ion-list>
+  </div>
+
+  <div style="border:1px;">
+    <ion-list>
+      <ion-grid>
+      <ion-row  class="home_row_heading">
+          FLEET DAY'S COLLECTION
+      </ion-row>
+      <ion-row  class="home_row_head">
+      <ion-col>
+        <div style="width: 90px;">
+        <small>RECEIPT NUM</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>APP NUM</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>NAME</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>CLASS</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>SECTION</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>PAID AMOUNT</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>CONCESSION</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>CONCESSION REASON</small>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        <small>COLLECTION_MODE</small>
+        </div>
+      </ion-col>
+      <ion-col>
+          <div>
+          <small>COLLECTION_TIME</small>
+          </div>
+      </ion-col>
+      </ion-row>
+      </ion-grid>
+
+      <ion-grid *ngFor="let post of PostData5">
+        <ion-row  class="home_row" >
+          <ion-col>
+            <div>
+            <small> {{post.ReceiptNo}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div style="width: 90px;">
+            <small> {{post.ApplicationNo}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small> {{post.StudentFirstName}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <small> {{post.CurrentSemester}}</small>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small> {{post.SectionName}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small> {{post.AmountPaid}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small> {{post.ConcessionAmount}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small>{{post.ConcessionReason}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small> {{post.PaymentMode}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small> {{post.SectionName}}</small>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+            <small>{{post.Created}}</small>
+            </div>
+          </ion-col>
+          </ion-row>
+      </ion-grid>
+    </ion-list>
+  </div>
+</ion-content>
+
